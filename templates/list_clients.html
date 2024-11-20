@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Clients</title>
+</head>
+
+<body>
+    <h1>Connected Clients</h1>
+    <ul>
+        {% for client in clients %}
+        <li>
+            <a href="/clients/{{ client[0] }}">{{ client[0] }}</a>
+            (Last seen: {{ client[1] }})
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>

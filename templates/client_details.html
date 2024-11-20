@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Client Details</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        canvas {
+            border: 1px solid black;
+            max-height: 80vh;
+        }
+
+        #points-data {
+            display: none;
+        }
+
+        body {
+            padding: 20px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Client {{ client_id }}</h1>
+    <p>Status: {{ "Live" if is_live else "Offline" }}</p>
+
+    <canvas id="chart" width="800" height="400"></canvas>
+    <p id="points-data">{{ points }}</p>
+
+    <script>
+        const points = JSON.parse(
+            document.getElementById('points-data').textContent
+        );
+
+        new Chart(document.getElementById('chart'), {
+            type: 'line',
+            data: {
+                labels: points.map(point => point.timestamp),
+                datasets: [
+                    {
+                        label: 'Values',
+                        data: points.map(point => point.value),
+                        fill: false,
+                        borderColor: 'grey'
+                    },
+                    {
+                        label: 'Anomalies',
+                        data: points.map(point => point.anomaly === 1 ? point.value : null),
+                        borderColor: 'red',
+                        fill: false,
+                        pointRadius: 6
+                    }
+                ]
+            },
+        });
+    </script>
+</body>
+
+</html>
