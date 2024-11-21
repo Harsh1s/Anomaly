@@ -7,6 +7,6 @@ start:
 	make reset
 
 	python server.py &
-	sleep 1 
+	sleep 10 
 
 	python client.py
