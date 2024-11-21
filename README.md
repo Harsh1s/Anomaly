@@ -51,3 +51,10 @@ The statistical models that we use are:
 
 We also make use of `yfinance` to source stock data for the client to stream to the server.
 
+### Demo Video
+
+https://github.com/user-attachments/assets/cf94a20e-b3b2-44b5-89db-d0cd735a9fa5
+
+
+
+
