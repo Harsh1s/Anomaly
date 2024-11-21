@@ -44,6 +44,8 @@ The statistical models that we use are:
 - [Z Score](https://en.wikipedia.org/wiki/Standard_score)
 - [IQR](https://en.wikipedia.org/wiki/Interquartile_range)
 - [EWMA](https://en.wikipedia.org/wiki/EWMA_chart)
+- [Moving Average](https://en.wikipedia.org/wiki/Moving_average)
+- [Isolation Forest](https://en.wikipedia.org/wiki/Isolation_Forest)
 
 ### Data Source
 
